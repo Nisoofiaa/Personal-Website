@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Family</title>
+	<link rel="stylesheet" type="text/css" href="CSSINDEX/style.css">
+	<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+.modal {
+  display: none; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9);
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+	<header>
+<div class="topnav" id="myTopnav">
+	<a class="active" href="index.html">HOME</a>
+	<a href="Biography.html">BIOGRAPHY</a>
+	<a href="Experience.html">EXPERIENCE</a>
+	<a href="Family.html">FAMILY</a>
+	
+	<a href="Contact.html">CONTACT</a>
+<div class="dropdown">
+<button class="dropbtn">GALLERY
+	<i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+	<a href="Photo.html">Photo</a>
+	<a href="Video.html">Video</a>
+			
+
+</header>
+</div>
+<h2 style="text-align: center; color:white; font-family: verdana;">This is my family</h2>
+<p style="text-align: center;">Raya Idulfitr This Year (2023)</p>
+<p style="text-align:center; font-family: sans-serif;"><b><Q>THE HARDEST THING TO DO IS FORGET SOMEONE WHO WAS THE REASON FOR YOUR SMILE</b></Q></p>
+
+<img id="myImg" src="Images/gambar1.jpg" alt="A photo with my late grandmother from father's side" style="width:60%;" class="center">
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+
+var modal = document.getElementById("myModal");
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+ </body>
+ </html>
